@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Firefox */
+  :root {
+    --scrollbar-background: transparent;
+    --scrollbar-color: rgba(0, 0, 0, 0.1);
+  }
+
+  * {
+    scrollbar-width: 10px;
+    scrollbar-color: var(--scrollbar-color) var(--scrollbar-background);
+  }
+
+  /* Chrome, Edge, and Safari */
+
+  #sidebar {
+    scrollbar-gutter: stable both-edges;
+  }
+
+  #sidebar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  *::-webkit-scrollbar,
+  *::-webkit-scrollbar:horizontal {
+    width: 10px;
+    height: 10px;
+  }
+
+  *::-webkit-scrollbar-track,
+  *::-webkit-scrollbar-track:horizontal {
+    background: var(--scrollbar-background);
+    border-radius: 6px;
+  }
+
+  *::-webkit-scrollbar-thumb,
+  *::-webkit-scrollbar-thumb:horizontal {
+    background-color: var(--scrollbar-color);
+    border-radius: 10px;
+    border: 2px solid var(--scrollbar-background);
+  }
+
+  body {
+    @apply relative font-jakarta text-netral-100;
+  }
+}
+
+@layer utilities {
+  /* "heading-xl": ["64px", "76px"],
+  "heading-lg": ["46px", " 54px"],
+  "heading-md": ["36px", " 44px"],
+  "heading-sm": ["24px", " 30px"], */
+  .text-heading {
+    &-xl {
+      @apply 2xl:text-[64px] 2xl:leading-[76px];
+    }
+
+    &-lg {
+      @apply 2xl:text-[46px] 2xl:leading-[54px];
+    }
+
+    &-md {
+      @apply 2xl:text-4xl 2xl:leading-[44px];
+    }
+
+    &-sm {
+      @apply 2xl:text-2xl 2xl:leading-[30px];
+    }
+  }
+
+  .text-body {
+    &-xl {
+      @apply 2xl:text-xl 2xl:leading-7;
+    }
+
+    &-lg {
+      @apply 2xl:text-lg 2xl:leading-6;
+    }
+
+    &-base {
+      @apply 2xl:text-base 2xl:leading-[22px];
+    }
+
+    &-sm {
+      @apply 2xl:text-sm 2xl:leading-5;
+    }
+
+    &-xs {
+      @apply 2xl:text-xs 2xl:leading-4;
+    }
+
+    &-2xs {
+      @apply 2xl:text-[10px] 2xl:leading-[14px];
+    }
+  }
+}
